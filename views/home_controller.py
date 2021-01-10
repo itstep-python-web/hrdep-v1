@@ -12,7 +12,7 @@ class HomeController(object):
         cursor.execute('SELECT * FROM departments')
         for row in cursor.fetchall():
             dep_list.append({
-                'id': row['id'], 'name': row['name']
+                'id': row[0], 'name': row[1]
             })
         return render_template('home/index.html', context={
             'page_title': 'Главная',
