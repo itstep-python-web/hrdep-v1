@@ -8,7 +8,7 @@ class HomeController(object):
     @app.route('/')
     def index():
         dep_list = []
-        cursor = mysql.connection.cursor()
+        cursor = mysql.get_db().cursor()
         cursor.execute('SELECT * FROM departments')
         for row in cursor.fetchall():
             dep_list.append({
