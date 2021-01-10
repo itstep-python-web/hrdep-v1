@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<div class="main_box">
+    <h2>Главная страница</h2>
+    <h3>Список департаментов</h3>
+    <div class="list_box">
+        <ol>
+            {% for dep in context.departments %}
+            <li><a href="">{{ dep['name'] }}</a></li>
+            {% endfor %}
+        </ol>
+    </div>
+</div>
+<style>
+    .list_box {
+        width: 200px;
+        margin: 0 auto;
+        text-align: left;
+    }
+</style>
+{% endblock %}
